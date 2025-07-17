@@ -1,0 +1,25 @@
+{
+  "name": "delivery-api",
+  "version": "1.0.0",
+  "description": "API de entrega de encomendas",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "Giovanna Leme Amadeu",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.14",
+    "prisma": "^6.12.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
