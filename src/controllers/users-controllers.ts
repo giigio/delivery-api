@@ -1,15 +1,15 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 import { z } from "zod";
 import { hash } from "bcrypt";
 import { prisma } from "@/database/prisma";
 import { AppError } from "@/utils/AppError";
 
 class UsersController {
-  index(request: Request, response: Response, next: NextFunction) {
+  index(request: Request, response: Response) {
     return response.json({ message: "ok index" });
   }
 
-  async create(request: Request, response: Response, next: NextFunction) {
+  async create(request: Request, response: Response) {
     const bodySchema = z.object({
       name: z.string().trim().min(2),
       email: z.email(),

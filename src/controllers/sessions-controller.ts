@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import { AppError } from "@/utils/AppError";
 import { authConfig } from "@/configs/auth";
 import { sign } from "jsonwebtoken";
@@ -7,7 +7,7 @@ import { z } from "zod";
 import { compare } from "bcrypt";
 
 class SessionsController {
-  async create(request: Request, response: Response, next: NextFunction) {
+  async create(request: Request, response: Response) {
     const bodySchema = z.object({
       email: z.email(),
       password: z.string().min(6),
