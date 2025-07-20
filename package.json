@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "tsx watch --env-file .env src/server.ts",
     "test": "jest",
-    "test:watch": "set NODE_OPTIONS=--experimental-vm-modules && jest --watchAll --runInBand"
+    "test:watch": "set NODE_OPTIONS=--experimental-vm-modules && jest --watchAll --runInBand",
+    "build": "tsup",
+    "start": "node --env-file=.env build/server.js"
   },
   "author": "Giovanna Leme Amadeu",
   "license": "ISC",
@@ -31,6 +33,7 @@
     "supertest": "^7.1.3",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
