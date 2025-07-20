@@ -9,7 +9,7 @@ datasource db {
 }
 
 enum UserRole{
-  costumer
+  customer
   sales
 }
 
@@ -24,7 +24,7 @@ model Users{
   name String
   email String
   password String
-  role UserRole @default(costumer)
+  role UserRole @default(customer)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime? @updatedAt @map("updated_at")
 
