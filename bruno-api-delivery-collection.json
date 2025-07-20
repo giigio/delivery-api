@@ -1,0 +1,367 @@
+{
+  "name": "API Delivery",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Deliveries",
+      "filename": "Deliveries",
+      "seq": 3,
+      "root": {
+        "request": {
+          "vars": {
+            "req": [
+              {
+                "name": "RESOURCE",
+                "value": "deliveries",
+                "enabled": true,
+                "local": false,
+                "uid": "ArVTrWWv1dUYalxJg8tia"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Deliveries",
+          "seq": 3
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "CREATE",
+          "filename": "CREATE.bru",
+          "seq": 1,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{session_token}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"user_id\": \"e8b0b048-c01e-44fe-89d0-bf2b4b8c1cf0\",\n  \"description\": \"Celular Iphone\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "INDEX",
+          "filename": "INDEX.bru",
+          "seq": 2,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{session_token}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "json": "{\n  \"status\": \"\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "UPDATE",
+          "filename": "UPDATE.bru",
+          "seq": 3,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}/7b2dd9fb-23ba-4c15-babe-a30c93328161/status",
+            "method": "PATCH",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{session_token}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"status\": \"shipped\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Logs",
+      "filename": "Logs",
+      "seq": 4,
+      "root": {
+        "request": {
+          "vars": {
+            "req": [
+              {
+                "name": "RESOURCE",
+                "value": "deliveries-logs",
+                "enabled": true,
+                "local": false,
+                "uid": "fHXTTi4NiqFPLqfniIrXb"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Logs",
+          "seq": 4
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "CREATE",
+          "filename": "CREATE.bru",
+          "seq": 1,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{session_token}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"description\": \"o pedido foi coletado\",\n  \"delivery_id\": \"7b2dd9fb-23ba-4c15-babe-a30c93328161\" \n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "INDEX",
+          "filename": "INDEX.bru",
+          "seq": 2,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}/7b2dd9fb-23ba-4c15-babe-a30c93328161/logs",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": "Bearer {{session_token}}",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Sessions",
+      "filename": "Sessions",
+      "seq": 2,
+      "root": {
+        "request": {
+          "vars": {
+            "req": [
+              {
+                "name": "RESOURCE",
+                "value": "sessions",
+                "enabled": true,
+                "local": false,
+                "uid": "onUevE2VguvuflFomHnyy"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Sessions",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "CREATE",
+          "filename": "CREATE.bru",
+          "seq": 1,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\": \"maria@mail.com\",\n  \"password\": \"123456\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {
+              "res": [
+                {
+                  "name": "session_token",
+                  "value": "res.body.token",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Users",
+      "filename": "Users",
+      "seq": 1,
+      "root": {
+        "request": {
+          "vars": {
+            "req": [
+              {
+                "name": "RESOURCE",
+                "value": "users",
+                "enabled": true,
+                "local": false,
+                "uid": "eVW4zHVeWaIqkSMpgS9sN"
+              }
+            ]
+          }
+        },
+        "meta": {
+          "name": "Users",
+          "seq": 1
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "CREATE",
+          "filename": "CREATE.bru",
+          "seq": 2,
+          "request": {
+            "url": "{{BASE_URL}}/{{RESOURCE}}",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Julio\",\n  \"email\": \"julio@mail.com\",\n  \"password\": \"123456\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "gRo8nEXMDRGgpr0T18Hkt",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "BASE_URL",
+          "value": "http://localhost:3333",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Dev"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "API Delivery",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0021009445190429688,
+    "filesCount": 12
+  }
+}

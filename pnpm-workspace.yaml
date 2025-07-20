@@ -3,3 +3,4 @@ onlyBuiltDependencies:
   - bcrypt
   - esbuild
   - prisma
+  - unrs-resolver
